@@ -14,7 +14,7 @@ const images = [
 ];
 
 
-const listRef = document.querySelector('.gallery');
+// const listRef = document.querySelector('.gallery');
 
 // const createGalery = element => {
 //     const makeImg = element =>
@@ -29,14 +29,31 @@ const listRef = document.querySelector('.gallery');
     
     
 
-const makeImg = images.map(({ url, alt }) => {
-  return `<li></img src="${url}" alt="${alt}"></li>`
-}).join('');
+// const makeImg = images.map(({ url, alt }) => {
+//   return `<li></img src="${url}" alt="${alt}"></li>`
+// }).join('');
 
+// console.log(makeImg);
+
+
+// listRef.insertAdjacentHTML("afterbegin", makeImg);
+// listRef.classList.add('js-gallery__list', 'list')
+// listRef.querySelectorAll('li')
+//   .forEach(item => item.classList.add('.js-gallery__item'))
+
+const listRef = document.querySelector('.gallery');
+const makeImg = images
+    .map(({ url, alt }) => {
+      return `<li>
+        <img
+          src="${url}"
+       alt=${alt}/>
+           </li>`;
+    })
+    .join('');
 console.log(makeImg);
-
-
-listRef.insertAdjacentHTML("afterbegin", makeImg);
+listRef.insertAdjacentHTML('afterbegin', makeImg);
 listRef.classList.add('js-gallery__list', 'list')
 listRef.querySelectorAll('li')
   .forEach(item => item.classList.add('.js-gallery__item'))
+makeImg(images);
