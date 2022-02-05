@@ -23,7 +23,7 @@ function onFormSubmit(event) {
     const mail = formElements.email.value;
     const password = formElements.password.value;
 
-    if (mail && password === '') {
+    if (mail === '' || password === '') {
         alert('Заполните все поля')
     } else {
         const formData = {

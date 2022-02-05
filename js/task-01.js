@@ -1,12 +1,21 @@
-const categoryRef = document.querySelectorAll('.item')
-console.log(categoryRef)
-console.log(`В списке ${categoryRef.length} категории`)
-console.log('==========================')
+// const categoryRef = document.querySelectorAll('.item')
+// console.log(categoryRef)
+// console.log(`В списке ${categoryRef.length} категории`)
+// console.log('==========================')
 
-categoryRef.forEach(function (element) {
-    const titleRef = element.querySelector('h2');
-    const numberRef = element.querySelectorAll('li');
-    console.log(`Категория: ${titleRef.textContent}\nКоличество элементов: ${numberRef.length}`)
-    console.log('==========================')
-})
+// categoryRef.forEach(function (element) {
+//     const titleRef = element.querySelector('h2');
+//     const numberRef = element.querySelectorAll('li');
+//     console.log(`Категория: ${titleRef.textContent}\nКоличество элементов: ${numberRef.length}`)
+//     console.log('==========================')
+// })
  
+
+
+   
+const categoriesEl = document.querySelectorAll(`.item`);
+
+categoriesEl.forEach(category => {
+    console.log('Категория:', category.querySelector('h2').textContent);
+    console.log('Категория:', category.querySelectorAll('li').length)
+})
