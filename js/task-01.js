@@ -12,10 +12,13 @@
  
 
 
-   
-const categoryRef = document.querySelectorAll(`.item`);
 
-categoryRef.forEach(category => {
-    console.log('Категория:', category.querySelector('h2').textContent);
-    console.log('Категория:', category.querySelectorAll('li').length)
-})
+   
+const categoryRef = document.querySelector('#categories')
+console.log(`В списке ${categoryRef.children.length} категории.`)
+const childrenList = Array.from(categoryRef.children)
+console.dir(childrenList)
+childrenList.forEach(e => {
+    console.log(`Категория: ${e.firstElementChild.textContent}`)
+    console.log(`Количество элементов: ${e.lastElementChild.children.length}`)
+});
